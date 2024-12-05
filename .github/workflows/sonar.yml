@@ -33,7 +33,7 @@ jobs:
         run: |
           npx sonar-scanner \
             -Dsonar.projectKey=calculator-library \
-            -Dsonar.organization=<sua-organizacao-no-sonar> \
+            -Dsonar.organization=brunoplazzi-org \
             -Dsonar.sources=src \
             -Dsonar.tests=tests \
             -Dsonar.test.inclusions=**/*.test.ts \
