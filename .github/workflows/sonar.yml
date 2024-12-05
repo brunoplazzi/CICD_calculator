@@ -79,6 +79,6 @@ jobs:
       - name: Publish package to npm
         run: npm publish --access=public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_KEY }}  # Token de autenticação do NPM
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}  # Token de autenticação do NPM
 
 
