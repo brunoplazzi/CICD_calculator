@@ -41,3 +41,44 @@ jobs:
             -Dsonar.tests=tests \
             -Dsonar.test.inclusions=**/*.test.ts \
             -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build  # Comando para compilar seu projeto TypeScript
+
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Publish package to npm
+        run: npm publish --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_KEY }}  # Token de autenticação do NPM
+
+
