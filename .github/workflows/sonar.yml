@@ -35,7 +35,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           npx sonar-scanner \
-            -Dsonar.projectKey=calculator-library \
+            -Dsonar.projectKey=brunoplazzi_CICD_calculator \
             -Dsonar.organization=brunoplazzi-org \
             -Dsonar.sources=src \
             -Dsonar.tests=tests \
