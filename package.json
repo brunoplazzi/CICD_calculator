@@ -1,25 +1,24 @@
 {
-  "name": "calculator-library",
+  "name": "nodejs-typescript",
   "version": "1.0.0",
-  "description": "A TypeScript calculator library for basic math operations",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "description": "",
+  "main": "index.ts",
+  "type": "module",
   "scripts": {
-    "build": "tsc",
-    "test": "jest",
-    "prepare": "npm run build"
+    "test": "jest"
   },
-  "files": [
-    "dist/**/*"
-  ],
-  "keywords": ["calculator", "typescript", "math"],
-  "author": "Seu Nome",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/seu-usuario/calculator-library.git"
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.3.1"
   },
-  "publishConfig": {
-    "access": "public"
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^20.10.0",
+    "jest": "^29.7.0",
+    "sonar-scanner": "^3.1.0",
+    "ts-jest": "^29.2.5",
+    "tsx": "^4.7.1"
   }
 }
+
