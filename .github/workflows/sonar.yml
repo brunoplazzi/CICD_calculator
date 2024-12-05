@@ -30,11 +30,11 @@ jobs:
       - name: SonarCloud Scan
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: |
-          npx sonar-scanner \
-            -Dsonar.projectKey=calculator-library \
-            -Dsonar.organization=brunoplazzi-org \
-            -Dsonar.sources=src \
-            -Dsonar.tests=tests \
-            -Dsonar.test.inclusions=**/*.test.ts \
-            -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info
+        run: npx sonar-scanner \
+          -Dsonar.projectKey=calculator-library \
+          -Dsonar.organization=brunoplazzi-org \
+          -Dsonar.sources=src \
+          -Dsonar.tests=tests \
+          -Dsonar.test.inclusions=**/*.test.ts \
+          -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info
+
